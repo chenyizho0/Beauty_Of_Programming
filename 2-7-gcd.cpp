@@ -68,6 +68,15 @@ int gcd1(int x,int y)
 	return ans * x;
 }
 
+int gcd2(int x, int y)
+{
+	if(x < y)
+		return gcd2(y,x);
+	if(y == 0)
+		return x;
+	return gcd2(y,x-y);
+}
+
 int main()
 {
 	int a,b;
@@ -76,8 +85,9 @@ int main()
 		cin >> a >> b;
 		if(a == 0 && b == 0)
 			break;
-		cout << gcd(a,b) << endl; //递归实现
+		//cout << gcd(a,b) << endl; //递归实现
 		//cout << gcd1(a,b) << endl;   //迭代实现
+		cout << gcd2(a,b) << endl;   //相减
 	}
 	return 0;
 }
