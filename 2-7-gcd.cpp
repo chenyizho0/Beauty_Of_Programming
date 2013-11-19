@@ -32,6 +32,41 @@ int gcd(int x, int y)
 
 }
 
+int gcd1(int x,int y)
+{
+	int ans = 1;
+	while(1)
+	{
+		if(x < y)
+		{
+			int tmp = x;
+			x = y;
+			y = tmp;
+		}
+		if(y == 0)break;
+		if(x & 2 == 0)
+		{
+			if(y & 2 == 0)
+			{
+				x >> 1;
+				y >> 1;
+				ans << 1;
+			}
+			else
+			{
+				x >> 1;
+			}
+		}
+		else
+		{
+			if(y & 1 == 0)
+				y >> 1;
+			else
+				x = x - y;
+		}
+	}
+	return ans * x;
+}
 
 int main()
 {
@@ -41,7 +76,8 @@ int main()
 		cin >> a >> b;
 		if(a == 0 && b == 0)
 			break;
-		cout << gcd(a,b) << endl;
+		cout << gcd(a,b) << endl; //递归实现
+		//cout << gcd1(a,b) << endl;   //迭代实现
 	}
 	return 0;
 }
