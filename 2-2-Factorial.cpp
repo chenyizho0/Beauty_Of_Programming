@@ -8,7 +8,7 @@
 #include<iostream>
 using namespace std;
 
-int count(int N)
+int count(int N)//0的个数
 {
 	int ans = 0;
 	while(N)
@@ -19,7 +19,7 @@ int count(int N)
 	return ans;
 }
 
-int count1(int N)
+int count1(int N)//计算第一个1
 {
 	int ans = 0;
 	while(N)
@@ -30,7 +30,7 @@ int count1(int N)
 	return ans+1;
 }
 
-int count2(int N)
+int count2(int N)//计算第1个1 方法2
 {
 	int ans = 0;
 	int tmpN = N;
