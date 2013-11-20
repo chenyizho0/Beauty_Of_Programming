@@ -8,6 +8,6 @@
 
 git init
 git commit -m "$(date)"
-git remote add origin git@github.com:chenyizho0/Beauty_Of_Programming.git
+#git remote add origin git@github.com:chenyizho0/Beauty_Of_Programming.git
 git add .
 git push -u origin master
